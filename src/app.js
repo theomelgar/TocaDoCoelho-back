@@ -9,7 +9,7 @@ app.use(cors())
 
 const PORT = process.env.PORT
 
-//routes
+//routes teste
 app.use([ authRouter, operationsRouter ])
 
 app.listen(PORT, () => console.log("Servidor online na porta: " + PORT)) 
