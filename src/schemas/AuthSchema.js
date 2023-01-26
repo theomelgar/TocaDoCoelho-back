@@ -9,5 +9,5 @@ export const cadastroSchema = joi.object({
 
 export const loginSchema = joi.object({
     email: joi.string().email().required(),
-    senha: joi.string().required(),
+    senha: joi.string().required()
 })
