@@ -3,9 +3,10 @@ import db from "../config/database.js"
 
 export async function produtos(req, res) {
     try {
-        res.send("PRODUTOS")
+        const produtos = await db.collection("produtos").find().toArray()
+        res.send(produtos)
     } catch (error) {
         console.log(error)
-        res.sendStatus(500)
+        res.status(500).send(error)
     }
 }
