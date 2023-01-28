@@ -23,16 +23,3 @@ export async function idProduto(req, res) {
         res.status(500).send((error))
     }
 }
-
-export async function desconectar(req, res) {
-    const {token} = req.body
-    try {
-        const exists = await db.collection("sessoes").findOne({token:token})
-        if (!exists) return res.status(422).send(console.log(req.body))
-        await db.collection("sessoes").deleteOne({token:token})
-        res.status(202).send("Deletado")
-    } catch (error) {
-        console.log(error)
-        res.sendStatus(500)
-    }
-}
