@@ -1,6 +1,6 @@
 //MIDDLEWARE
 import dayjs from "dayjs";
-import { finalizarCompraSchema } from "../schemas/FinalizarCompraSchema";
+import { finalizarCompraSchema } from "../schemas/FinalizarCompraSchema.js";
 
 export function validarFinalizarCompra(req, res, next){
 
@@ -15,7 +15,7 @@ export function validarFinalizarCompra(req, res, next){
         formaDePagamento,
         cesta,
         total,
-        usuario: usuario._id,
+        idUsuario: usuario.idUsuario,
         criadoEm: dayjs().format("DD/MM/YYYY")
     }
 
@@ -35,11 +35,3 @@ export function validarFinalizarCompra(req, res, next){
 
 
 
-/*
-res.locals.sessao = checkSessao
-
-            await db.collection("sessoes").insertOne({
-                idUsuario: usuario._id,
-                token
-            });
-            */

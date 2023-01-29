@@ -1,4 +1,4 @@
-import db from "../config/database";
+import db from "../config/database.js";
 
 //CONTROLLER
 
@@ -8,7 +8,7 @@ export async function finalizarCompra(req, res){
 
     try{
 
-        await db.collection.insertOne(compra);
+        await db.collection("compras").insertOne(compra);
 
         res.status(201).send("Compra finalizada com sucesso!");
 

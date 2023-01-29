@@ -7,8 +7,8 @@ export const finalizarCompraSchema = joi.object({
     email: joi.string().email().required(),
     cep: joi.number().required(),
     formaDePagamento: joi.string().required(),
-    cesta: joi.object().required(),
+    cesta: joi.array().required(),
     total: joi.number().required(),
-    usuario: joi.object().required(),
+    idUsuario: joi.string().required(),
     criadoEm: joi.string().required()
 });
