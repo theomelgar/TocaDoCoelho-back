@@ -10,5 +10,5 @@ export const finalizarCompraSchema = joi.object({
     cesta: joi.array().required(),
     total: joi.string().required(),
     idUsuario: joi.string().required(),
-    criadoEm: joi.required()
+    criadoEm: joi.required() 
 });
