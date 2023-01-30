@@ -4,7 +4,7 @@ import db from "../config/database.js";
 
 export async function finalizarCompra(req, res){
 
-    const compra = res.locals.compra;
+    const compra = req.body;
 
     try{
 
